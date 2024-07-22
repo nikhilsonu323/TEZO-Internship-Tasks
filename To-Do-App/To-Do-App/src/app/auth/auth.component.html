@@ -1,0 +1,38 @@
+<div class="auth-container" [ngClass]="isLoginPage ? 'login' : 'signup'">
+    <img src="assets/auth-background.jpg" class="background-image">
+    <div class="content">
+        <div class="auth-title">
+            <h1 [ngClass]="isLoginPage ? 'text-brown' : ''">To-Do APP</h1>
+            <p>Start organizing your life day by day</p>
+        </div>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+            <ul>
+                <li>
+                    <input type="text" name="username" placeholder="Username" formControlName="username">
+                    <p class="error-message" *ngIf="(authForm.get('username')?.touched || authForm.get('username')?.dirty) && authForm.get('username')?.invalid">
+                        {{getErrorMessage(authForm.get('username')?.errors)}}
+                    </p>
+                </li>
+                <li>
+                    <div class="form-item-password">
+                        <input type="password" name="password" placeholder="Password" formControlName="password" #passwordField>
+                        <img src="assets/clarity_eye-hide-line.png" alt="" class="password-toggle-icon" (click)="togglePassword()">
+                    </div>
+                    <p class="error-message" *ngIf="(authForm.get('password')?.touched || authForm.get('password')?.dirty) && authForm.get('password')?.invalid">
+                        {{getErrorMessage(authForm.get('password')?.errors)}}
+                    </p>
+                </li>
+                <li>
+                    <p class="error-message" *ngIf="errrorMessage">{{errrorMessage}}</p>
+                </li>
+                <li class="form-item-button">
+                    <div>
+                        <button>{{isLoginPage ? 'Sign In' : 'Sign Up'}}</button>
+                    </div>
+                    <p *ngIf="!isLoginPage">Already have an account? Sign in <span (click)="toggleMode()" class="text-brown">here</span>.</p>
+                    <p *ngIf="isLoginPage">Don't have an account? Create <span (click)="toggleMode()" class="text-orange">here</span>.</p>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="search-component">
+    <div class="search-img">
+        <img src="assets/images/bx-search.png" alt="search_image">
+    </div>
+    <input type="text" id="searchText" placeholder="Search">
+
+    <div class="serach-bar-icons">
+        <img src="assets/images/Vertical Navbar/Language.svg" alt="iconButton">
+        <img src="assets/images/Vertical Navbar/Categories.svg" alt="icon1">
+        <img src="assets/images/Vertical Navbar/Mode.svg" alt="icon2">
+        <img src="assets/images/Vertical Navbar/Notifications.svg" alt="icon3">
+
+        <div class="user-details" (click)="toggle()" #userDetails>
+            <img [src]="user?.imageData" alt="">
+            <div>
+                <div>{{user?.name}}</div>
+                <div class="f-bold">Admin</div>
+            </div>
+            <img class="expand-arrow"  src="assets/images/svg/down_arrow.svg" alt="User details">
+        </div>
+
+        <div *ngIf="showLogout" class="logout" #logoutContainer>
+            <button (click)="logout()" class="light-red-theme">Logout</button>
+        </div>
+    </div>
+</div>

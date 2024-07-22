@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="script.js" defer></script>
+    <script src="common.js" defer></script>
+</head>
+<body onload="loadEmployees()">
+    <div class="container">
+        <nav class="padd-l-1r bg-white w-300" id="vNav">
+
+            <div class="logo padd-lr-15">
+                <img id="logoImg" src="images/TezoLogo.svg" alt="logo">
+                <img id="minimize" class="c-pointer" src="images/handle.png" alt="handle">
+            </div>
+            <div class="padd-r-1r">
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 navHeadings">ALL</div>
+                <div class="nav-items">
+                    <img src="images/Horizontal nav/Dashboard.svg" alt="lock">
+                    <span>Dashboard</span>
+                </div>
+                <a class="nav-items light-red-theme b-rad-5 after side-red" href="employees.html">
+                    <img src="images/Horizontal nav/Employees-red.svg" alt="lock">
+                    <span>Employees</span>
+                </a>
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 navHeadings">ROLE/USER MANAGEMENT</div>
+                <a class="nav-items justify-sb" href="roles.html">
+                    <div class="flex gap-1r">
+                        <img src="images/Horizontal nav/Roles-black.svg" alt="lock">
+                        <span>Roles</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </a>
+                <div class="nav-items justify-sb">
+                    <div class="flex gap-1r">
+                        <img src="images/Horizontal nav/assign user.svg" alt="lock">
+                        <span>Assign Rights</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </div>
+            </div>
+
+            <div class="update m-t-25 m-r-20">
+                <div>Install new update 2.3.1A</div>
+                <div>Allow to launch the new update for the AD application</div>
+                <div>
+                    <button class="light-red-theme">Dismiss</button>
+                    <button class="dark-red-theme">Accept</button>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="padd-r-1r section-300 flex-col">
+            <div class="sticky-t p-b-0 tableHeight" id="fixedDetails">
+                <div class="search">
+                    <input type="text" id="searchText" placeholder="Search">
+                    <img class="search-img" src="images/bx-search.png" alt="search_image">
+                    <div class="search-icons">
+                        <img src="images/Vertical Navbar/Language.svg" alt="iconButton">
+                        <img src="images/Vertical Navbar/Categories.svg" alt="icon1">
+                        <img src="images/Vertical Navbar/Mode.svg" alt="icon2">
+                        <img src="images/Vertical Navbar/Notifications.svg" alt="icon3">
+                        <div class="user-icon">
+                            <img src="images/target-user-icon.svg" alt="">
+                            <div>
+                                <div>Jhon Abraham</div>
+                                <div class="f-bold">Admin</div>
+                            </div>
+                        </div>
+                        <div class="trans-9"><i class="ph ph-caret-down"></i></div>
+                    </div>
+                </div>
+
+
+
+                <div class="flex-center justify-sb wrap m-t-1">
+                    <div>
+                        <div class="f-bold f-18 col-gray">Employees</div>
+                        <div class="col-grey f-14 m-t-8">Find all of your company's employee accounts and their associated roles.</div>
+                    </div>
+                    <div class="flex">
+                        <div>
+                            <button class="btn gray-btn" onclick="downloadCSV()"><div class="flex-center"><img src="images/Interface/Export.svg" alt=""><span>EXPORT</span></div></button>
+                        </div>
+                        <div>
+                            <button class="btn dark-red-theme br-none" onclick="toAddEmployee()"><div class="flex-center"><img src="images/Interface/Add.svg" alt=""><span>ADD EMPLOYEE</span></div></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-center gap-05 m-t-25">
+                    <svg width="35" height="40" viewBox="0 0 35 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-gray" id="filterIcon">
+                        <path d="M8.98804 13.9941C8.98804 13.2841 9.56387 12.7083 10.2739 12.7083H24.3689C25.0789 12.7083 25.6547 13.2841 25.6547 13.9941C25.6547 14.2933 25.5505 14.5833 25.3589 14.8141L19.4055 22.0116V26.1883C19.4055 26.7966 18.9105 27.2916 18.3022 27.2916C18.058 27.2916 17.8205 27.21 17.6247 27.0608L15.6389 25.5175C15.3847 25.3191 15.2355 25.0158 15.2355 24.6941V22.0116L9.2847 14.8141C9.09304 14.5833 8.98804 14.2933 8.98804 13.9941ZM10.2739 13.75C10.1372 13.75 10.0297 13.8608 10.0297 13.9941C10.0297 14.0525 10.0489 14.105 10.0847 14.1508L16.1589 21.4916C16.2372 21.5858 16.2789 21.7033 16.2789 21.8233V24.6941L18.2647 26.2375C18.2747 26.2475 18.2872 26.2508 18.3005 26.2508C18.333 26.2508 18.3622 26.225 18.3622 26.1891V21.8241C18.3622 21.7041 18.4047 21.5866 18.4822 21.4925L24.5564 14.1516C24.5922 14.1091 24.6114 14.0541 24.6114 13.995C24.6114 13.8583 24.5005 13.7508 24.3672 13.7508H10.2722L10.2739 13.75Z" fill="#F44848"/>
+                    </svg>
+                    <div class="alphabets gap-05"></div>
+                </div>
+
+                <div class="filter flex justify-sb">
+                    <div>
+                        <span>Filter <i class="ph ph-funnel-simple"></i></span>
+                        <div class="pos-rel status-filter">
+                            <div class="dropdown status">
+                                <span>Status</span>
+                                <span class="arrow-down f-right"><i class="ph ph-caret-down"></i></span>
+                            </div>
+                            <div class="status-options filter-options"></div>
+                        </div>
+
+                        <div class="pos-rel location-filter">
+                            <div class="dropdown location">
+                                <span>Location</span>
+                                <span class="arrow-down f-right"><i class="ph ph-caret-down"></i></span>
+                            </div>
+                            <div class="location-options filter-options"></div>
+                        </div>
+
+                        <div class="pos-rel department-filter">
+                            <div class="dropdown department">
+                                <span>Department</span>
+                                <span class="arrow-down f-right"><i class="ph ph-caret-down"></i></span>
+                            </div>
+                            <div class="department-options filter-options"></div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button class="redbr-btn" id="reset">Reset</button>
+                        <button class="red-btn" id="apply">Apply</button>
+                    </div>
+                </div>
+
+
+                <div class="flex-center justify-sb table-head shadow m-t-1">
+                    <span>
+                        <img class="trans-4" src="images/arrow-turn left -down.png" alt="delete">
+                        <button class="delete del-dis" disabled>Delete</button>
+                    </span>
+                    <span>
+                        <img src="images/table-add.png" alt="add">
+                    </span>
+                </div>
+            </div>
+
+            <div class="overflow shadow flex-1" id="userDetails">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>  <input type="checkbox" id="mainCheckbox"></th>
+                            <th onclick="sort('user')">  <span>USER</span>        <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('location')">  <span>LOCATION</span>    <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('department')">  <span>DEPARTMENT</span>  <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('role')">  <span>ROLE</span>        <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('empNo')">  <span>EMP NO</span>      <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('status')">  <span>STATUS</span>      <i class="ph ph-caret-up-down"></i>       </th>
+                            <th onclick="sort('joinDate')">  <span>JOIN DT</span>     <i class="ph ph-caret-up-down"></i>       </th>
+                            <th class="f-30 rel"> <i class="ph ph-dots-three"></i> </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="noDataMsg light-red-theme b-rad-5 ds-none">No Data Available</div>
+        </section>
+    </div>
+
+</body>
+</html>

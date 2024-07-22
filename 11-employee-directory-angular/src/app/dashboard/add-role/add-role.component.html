@@ -1,0 +1,75 @@
+<div>
+    <div class="roleForm-heading">{{formMode === Modes.Add ? 'Create New Role' : 'Edit Role'}}</div>
+    <form [formGroup]="roleForm" (ngSubmit)="onFormSubmit()">
+        <ul class="modal">
+            <li>
+                <ul class="grid">
+                    <li>
+                        <label for="fName">Role Name</label>
+                        <input type="text" placeholder="Role" id="fName" class="input" formControlName='roleName'>
+                        <ng-container *ngIf="roleForm.get('roleName')?.touched && roleForm.get('department')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="roleForm.get('department')?.errors?.['required']">{{errorMessages.required}}</span>
+                        </ng-container>
+                    </li>
+
+                    <li>
+                        <label for="department">Department</label>
+                        <select id="department" formControlName='department' class="input">
+                            <option value ="" hidden>Select Department</option>
+                            <option [value]="department.id" *ngFor="let department of departments">{{department.name}}</option>
+                        </select>
+                        <ng-container *ngIf="roleForm.get('department')?.touched && roleForm.get('department')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="roleForm.get('department')?.errors?.['required']">{{errorMessages.required}}</span>
+                        </ng-container>
+                    </li>
+                </ul>
+            </li>
+            
+            <li>
+                <label for="description">Description</label>
+                <textarea name="desc" placeholder="Text" id="description" formControlName='description' class="input"></textarea>
+            </li>
+            
+            <li class="mw-300">
+                <label for="location">Location</label>
+                <select id="location" formControlName='location' class="input">
+                    <option value="" hidden>Select Location</option>
+                    <option [value]="location.id" *ngFor="let location of locations; let isFirst = first">{{location.city}}</option>
+                </select>
+                <ng-container *ngIf="roleForm.get('location')?.touched && roleForm.get('location')?.invalid">
+                    <img class="alert-img" src="assets/images/alert.png" alt="">
+                    <span class="error" *ngIf="roleForm.get('location')?.errors?.['required']">{{errorMessages.required}}</span>
+                </ng-container>
+            </li>
+
+            <li class="mw-300">
+                <label for="assignEmployees">Assign employees</label>
+                <div #employeeList>
+                    <div class="relative" (click)="toDisplayEmployees = !toDisplayEmployees">
+                        <input type="text" id="assignEmployees" placeholder="Search for an employee" class="input" (input)="onSearchInputChange($event)" 
+                        (focus)="isSearchInputFocused = true" (blur)="isSearchInputFocused = false">
+                        <img class="down-arrow" src="assets/images/svg/keyboard_arrow_down.svg" alt="">
+                    </div>
+                    <div class="options" *ngIf="toDisplayEmployees || isSearchInputFocused">
+                        <ng-container *ngFor="let employee of employees">
+                            <div *ngIf="employee.name.toLowerCase().includes(searchText.toLowerCase())">
+                                <img [src]="employee.image ?? defaultImage" alt="userIcon">
+                                <span>{{employee.name}}</span>
+                                <input class="f-right" type="checkbox" (click)="onCheckBoxClick(employee.empNo)" 
+                                    [checked]="selectedEmployees.has(employee.empNo)">
+                            </div>
+                        </ng-container>
+                </div>
+            </div>
+            </li>
+        </ul>
+
+        <div class="flex-right">
+            <button class="btn br-none light-red-theme" type="button" (click)="onCancel()">Cancel</button>
+            <button class="btn br-none dark-red-theme" type="submit">{{formMode === Modes.Add ? 'Add Role' : 'Edit Role'}}</button>
+        </div>
+        
+    </form>
+</div>

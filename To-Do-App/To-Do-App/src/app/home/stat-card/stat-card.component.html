@@ -1,0 +1,12 @@
+<div class="stat-card bg-brown" [ngClass]="{'bg-brown': backgroundColor === 'brown', 'bg-orange': backgroundColor === 'orange'}">
+    <div class="stat-context">
+        <img *ngIf="statusType == statuses.Completed" src="assets/icon-park-solid_check-one.png" alt="">
+        <img *ngIf="statusType == statuses.Active" src="../../../assets/icon-park-solid_time.png" alt="">
+        <div>
+            <div class="stat-percent">{{(percent | number: '1.0-2') + '%'}}</div>
+            <div class="stat-description">
+                {{statusType == statuses.Active ? 'Active Tasks' : 'Completed Tasks'}}
+            </div>
+        </div>
+    </div>
+</div>

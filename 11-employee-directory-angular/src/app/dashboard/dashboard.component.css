@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    /* grid-template-columns: clamp(200px,25%,250px) 1fr; */
+    grid-template-columns: 280px 1fr;
+    transition: grid-template-columns 600ms;
+    padding-right: 1rem;
+}
+.minimized{
+    grid-template-columns: 90px 1fr !important;
+}

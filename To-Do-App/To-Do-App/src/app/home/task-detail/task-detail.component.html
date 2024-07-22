@@ -1,0 +1,33 @@
+<div class="details-box" [ngClass]="{'bg-orange': task.statusId == statuses.Completed, 'on-top': position == 'top', 'on-bottom': position == 'bottom' }">
+    <div class="task-detail flex-column">
+        <div class="details flex-column">
+            <div class="title flex-column">
+                <div class="heading">{{task.title}}</div>
+                <div class="time" [ngClass]="{'text-gray': task.statusId == statuses.Active, 'text-brown': task.statusId == statuses.Completed}">
+                    {{task.statusId == statuses.Active ? ('Added ' + timeSince(task.createdOn) ): ('Completed ' + timeSince(task.completedOn!))}}
+                </div>
+            </div>
+            <div class="description flex-column">
+                <div class="heading">Description</div>
+                <div class="description-text">{{task.description}}</div>
+            </div>
+        </div>
+
+        <div class="buttons" [ngClass]="{'image-bg-orange': task.statusId == statuses.Completed}">
+            <div>
+                <button>
+                    <img src="assets/material-symbols_check-box-outline.png" (click)="toggleStatus()" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/material-symbols_check-box.png" (click)="toggleStatus()" *ngIf="task.statusId == statuses.Completed" alt="">
+                </button>
+            </div>
+            <div>
+                <button *ngIf="task.statusId == statuses.Active" (click)="editTask()"><img src="assets/carbon_edit.png" alt=""></button>
+                <button class="m-left-16" (click)="deleteTask()">
+                    <img src="assets/ant-design_delete-outlined.png" *ngIf="task.statusId == statuses.Active" alt="">
+                    <img src="assets/ant-design_delete-outlined-brown.png" *ngIf="task.statusId == statuses.Completed" alt="">
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

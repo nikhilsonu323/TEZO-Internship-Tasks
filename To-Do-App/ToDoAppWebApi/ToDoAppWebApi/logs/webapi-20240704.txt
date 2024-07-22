@@ -1,0 +1,5 @@
+2024-07-04 15:34:34.121 +05:30 [ERR] {"message":"There is already an open DataReader associated with this Connection which must be closed first.\n","user":null,"endPoint":"ToDoAppWebApi.Controllers.AuthController.Login (ToDoAppWebApi)"}
+2024-07-04 15:40:52.566 +05:30 [ERR] {"message":"Incorrect syntax near '\\'.\n","user":null,"endPoint":"ToDoAppWebApi.Controllers.AuthController.Login (ToDoAppWebApi)"}
+2024-07-04 15:54:08.879 +05:30 [ERR] {"message":"There is already an open DataReader associated with this Connection which must be closed first.\n","user":null,"endPoint":"ToDoAppWebApi.Controllers.AuthController.Login (ToDoAppWebApi)"}
+2024-07-04 16:03:13.873 +05:30 [ERR] {"message":"There is already an open DataReader associated with this Connection which must be closed first.\n","user":null,"endPoint":"ToDoAppWebApi.Controllers.AuthController.Login (ToDoAppWebApi)"}
+2024-07-04 16:16:37.094 +05:30 [ERR] {"message":"Unclosed quotation mark after the character string '\r\n'.\n","user":null,"endPoint":"ToDoAppWebApi.Controllers.AuthController.Login (ToDoAppWebApi)"}

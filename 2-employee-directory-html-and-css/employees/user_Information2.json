@@ -1,0 +1,152 @@
+[
+    {
+        "user": "Percy",
+        "location": "Hansenport",
+        "department": "Movies & Electronics",
+        "status": false,
+        "role": "nnenadgomfriort",
+        "empNo": "8mwumulg",
+        "joinDt": "2023-02-07T14:52:49.7853167+00:00",
+        "email": "Fernando51@gmail.com"
+    },
+    {
+        "user": "Alejandro",
+        "location": "East Kayden",
+        "department": "Beauty & Music",
+        "status": true,
+        "role": "lsiaasoooaqoqts",
+        "empNo": "vtbdd5mw",
+        "joinDt": "2023-07-13T05:37:57.043558+00:00",
+        "email": "Fernando_Nicolas@gmail.com"
+    },
+    {
+        "user": "Shawn",
+        "location": "Kacimouth",
+        "department": "Industrial",
+        "status": true,
+        "role": "avitienesseiuue",
+        "empNo": "0iw22e6m",
+        "joinDt": "2023-09-15T19:39:06.5581394+00:00",
+        "email": "Fernando_Nicolas91@gmail.com"
+    },
+    {
+        "user": "Eva",
+        "location": "South Kallie",
+        "department": "Tools, Industrial & Music",
+        "status": false,
+        "role": "tanosimxivetous",
+        "empNo": "vrv0159d",
+        "joinDt": "2023-07-29T10:00:04.9198539+00:00",
+        "email": "Lauren_Bins@gmail.com"
+    },
+    {
+        "user": "Willie",
+        "location": "Lake Esperanza",
+        "department": "Beauty & Kids",
+        "status": false,
+        "role": "spmiuiumiulmnuu",
+        "empNo": "8hgsv1rc",
+        "joinDt": "2023-07-15T18:39:08.1984313+00:00",
+        "email": "Lauren.Bins@gmail.com"
+    },
+    {
+        "user": "Doris",
+        "location": "Port Talon",
+        "department": "Automotive",
+        "status": false,
+        "role": "rotdairxturqtou",
+        "empNo": "9f6mn8ey",
+        "joinDt": "2023-09-17T14:53:49.1030898+00:00",
+        "email": "Lauren.Bins@gmail.com"
+    },
+    {
+        "user": "Felicia",
+        "location": "Daynehaven",
+        "department": "Tools",
+        "status": false,
+        "role": "dnauanhdaitquie",
+        "empNo": "deb4cxh3",
+        "joinDt": "2023-08-04T15:17:45.8047673+00:00",
+        "email": "Lauren_Bins@gmail.com"
+    },
+    {
+        "user": "Abel",
+        "location": "East Aurelio",
+        "department": "Beauty",
+        "status": true,
+        "role": "naisttfmtubacbe",
+        "empNo": "ccv0vudr",
+        "joinDt": "2023-09-17T11:51:15.1094978+00:00",
+        "email": "Abel40@gmail.com"
+    },
+    {
+        "user": "Alison",
+        "location": "East Evalyn",
+        "department": "Garden",
+        "status": true,
+        "role": "uissiuuttdnoeii",
+        "empNo": "rrtzq87j",
+        "joinDt": "2023-08-10T07:05:20.598855+00:00",
+        "email": "Isabel_Harber@gmail.com"
+    },
+    {
+        "user": "Isabel",
+        "location": "Barrowsfurt",
+        "department": "Jewelery & Music",
+        "status": false,
+        "role": "uptsacrrlnpltdq",
+        "empNo": "qtfxdzcf",
+        "joinDt": "2023-02-26T09:25:42.2182843+00:00",
+        "email": "Shelly.Wisozk@gmail.com"
+    },
+    {
+        "user": "Ross",
+        "location": "East Talonmouth",
+        "department": "Automotive, Garden & Outdoors",
+        "status": true,
+        "role": "eauoantreedbetd",
+        "empNo": "15bzg9n1",
+        "joinDt": "2023-08-07T05:25:15.078722+00:00",
+        "email": "Shelly_Wisozk@gmail.com"
+    },
+    {
+        "user": "Lois",
+        "location": "East Dovie",
+        "department": "Clothing",
+        "status": true,
+        "empNo": "vvsf9b88",
+        "joinDt": "2023-10-05T15:15:13.7392602+00:00",
+        "email": "Lynn.Marquardt0@gmail.com",
+        "role": "poulrruutxmmaeu"
+    },
+    {
+        "user": "Ronald",
+        "location": "Adamsfort",
+        "department": "Garden",
+        "status": true,
+        "role": "eaaelsteqtecaer",
+        "empNo": "db3m74ns",
+        "joinDt": "2023-05-30T14:12:10.9422901+00:00",
+        "email": "Kristi90@gmail.com"
+    },
+    {
+        "user": "Irving",
+        "location": "Port Berta",
+        "department": "Garden & Computers",
+        "status": true,
+        "role": "epiateesdrdduiu",
+        "empNo": "tveu4vyo",
+        "joinDt": "2023-04-18T14:16:48.7011169+00:00",
+        "email": "Kristi.Huel@gmail.com"
+    },
+    {
+        "user": "Rose",
+        "location": "South Trevershire",
+        "department": "Games, Industrial & Clothing",
+        "status": false,
+        "role": "mamdumusmmiaess",
+        "empNo": "vqi9xiqi",
+        "joinDt": "2023-02-16T21:17:21.4277874+00:00",
+        "email": "Kristi.Huel@gmail.com"
+    }
+]

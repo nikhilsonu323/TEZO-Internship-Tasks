@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(238, 248, 252);
+        }
+        form{
+            display: grid;
+            width: 25%;
+            grid-template-columns: 25% 75%;
+            row-gap: 1rem;
+            margin: 0 auto;
+            height: 100%;
+            margin-top: 50px;
+        }
+        label{
+            display: block;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        input{
+            display: block;
+            padding: 0 10px;
+        }
+        button{
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <form id="submitDetails">
+        <label for="name">User name</label>
+        <input type="text" id ="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id ="email" required>
+
+        <label for="location">Location</label>
+        <input type="text" id ="location" required>
+    
+        <label for="department">Department</label>
+        <input type="text" id ="department" required>
+
+        <label for="role">Role</label>
+        <input type="text" id ="role" required>
+    
+        <label for="empNo">Emp No</label>
+        <input type="text" id ="empNo" required>
+    
+        <label for="date">Date</label>
+        <input type="date" id ="date" required>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById("submitDetails").addEventListener("submit",(e)=>{
+            e.preventDefault();
+            let user = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let location = document.getElementById("location").value;
+            let department = document.getElementById("department").value;
+            let role = document.getElementById("role").value;
+            let empNo = document.getElementById("empNo").value;
+            let date = document.getElementById("date").value;
+            let joinDt = "";
+            status = true;
+            date = date.split("-");
+            joinDt = date[1]+"/"+date[2]+"/"+date[0];
+
+            let prevData = localStorage.getItem("data")?[]:localStorage.getItem("data");
+            let data = JSON.stringify([{user,location,department,status,role,empNo,joinDt,email}]);
+            localStorage.setItem("data",prevData.concat(data));
+
+            window.location.href = "employees.html";
+        })
+    </script>
+</body>
+</html>

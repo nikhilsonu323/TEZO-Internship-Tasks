@@ -1,0 +1,45 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <div class="logo text-brown">
+            <h1>To-Do App</h1>
+        </div>
+        <div class="contents">
+            <div class="add-task">
+                <button class="flex-center" (click)="addTask()">
+                    <span class="add-task-text">Add Task</span>
+                    <span class="add-task-circle flex-align-center bg-brown">+</span>
+                </button>
+            </div>
+            <div class="signout-container">
+                <button (click)="signout()" class="signout-btn flex-align-center bg-brown">
+                    <span>Sign out</span>
+                    <img src="assets/Vector.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navigations">
+        <ul>
+            <li *ngFor="let route of getRoutesKeys()">
+                <a [routerLink]="route" routerLinkActive="bg-orange">
+                    <span class="route-text">{{routes[route]}} </span>
+                    
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dropdown-container">
+        <div  class="selectedRoute flex-align-center bg-orange" [ngClass]="{'bottom-radius-0': showDropdown}" (click)="toggleDropdown()">
+            <span>{{selectedOption.name}}</span>
+            <span><img src="assets/down-arrow.svg" alt=""></span>
+        </div>
+        <div class="dropdown" *ngIf="showDropdown">
+            <ng-container *ngFor="let route of getRoutesKeys()">
+                <div class="options flex-align-center" *ngIf="selectedOption.value !== route"  (click)="onDropdownChange({value: route, name: routes[route]})">{{routes[route]}}</div>
+            </ng-container>
+        </div>
+    </div>
+</div>

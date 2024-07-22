@@ -1,0 +1,50 @@
+<nav>
+    <section class="logo-banner padd-lr-15">
+        <img src="assets/images/TezoLogo.svg" alt="logo" *ngIf="!isNavbarMinimized">
+        <img class="navbar-handler pointer" [ngClass]="isNavbarMinimized ? 'rotate-180':''" src="assets/images/handle.png" alt="handle" (click)="toggleNavbar()">
+    </section>
+
+    <section class="padd-r-1r">
+
+        <div class="marg-top-bot col-grey padd-lr-15 f-14">ALL</div>
+        <div class="nav-items flex-gap-1r">
+            <img src="assets/images/Horizontal nav/Dashboard.svg" alt="lock">
+            <span *ngIf="!isNavbarMinimized">Dashboard</span>
+        </div>
+        <a class="nav-items flex-gap-1r" routerLink="employees" [ngClass]="!isNavbarMinimized? '':'hide-side-redbar'" [routerLinkActive]="['active-route','light-red-theme']" #emp>
+            <img [src]="emp.classList.contains('active-route')?'assets/images/Horizontal nav/Employees-red.svg':'assets/images/Horizontal nav/Employees.svg'" alt="lock">
+            <!-- <img src='assets/images/Horizontal nav/Employees.svg' alt="lock"> -->
+            <span *ngIf="!isNavbarMinimized">Employees</span>
+        </a>
+
+        <div class="marg-top-bot col-grey padd-lr-15 f-14">{{isNavbarMinimized ? 'Role' :'ROLE/USER MANAGEMENT'}}</div>
+        <a class="nav-items flex-justify-sb" routerLink="/roles" [routerLinkActive]="['active-route','light-red-theme']" #role>
+            <div class="flex-gap-1r">
+                <img [src]="role.classList.contains('active-route')?'assets/images/Horizontal nav/Roles.svg':'assets/images/Horizontal nav/Roles-black.svg'" alt="lock">
+                <span *ngIf="!isNavbarMinimized">Roles</span>
+            </div>
+            <div class="caret" *ngIf="!isNavbarMinimized">
+                <img [src]="role.classList.contains('active-route')?'assets/images/svg/arrow_forward_red.svg':'assets/images/svg/arrow_forward_ios.svg'" alt="lock">
+            </div>
+        </a>
+        <div class="nav-items flex-justify-sb">
+            <div class="flex-gap-1r">
+                <img src="assets/images/Horizontal nav/assign user.svg" alt="lock">
+                <span *ngIf="!isNavbarMinimized">Assign Rights</span>
+            </div>
+            <div class="caret" *ngIf="!isNavbarMinimized"><img src="assets/images/svg/arrow_forward_ios.svg" alt=""></div>
+        </div>
+    </section>
+
+    <section class="update m-t-25 m-r-20" *ngIf="!isNavbarMinimized">
+        <div>Install new update 2.3.1A</div>
+        <div>Allow to launch the new update for the AD application</div>
+        <div>
+            <button class="light-red-theme">Dismiss</button>
+            <button class="dark-red-theme">Accept</button>
+        </div>
+    </section>
+</nav>
+
+
+<i class="ph ph-caret-right"></i>

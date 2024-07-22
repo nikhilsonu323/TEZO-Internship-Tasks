@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container marg-top-bot">
+        <nav class="padd-l-1r">
+
+            <div class="logo padd-lr-15">
+                <img src="images/TezoLogo.svg" alt="logo">
+                <img src="images/handle.png" alt="handle">
+            </div>
+            <div class="padd-r-1r">
+
+                <div class="marg-top-bot col-grey padd-lr-15">ALL</div>
+                <div class="nav-items">
+                    <img src="images/Horizontal nav/Dashboard.svg" alt="lock">
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-items light-red-theme br-5 side-red">
+                        <img src="images/Horizontal nav/Employees.svg" alt="lock">
+                        <span>Employees</span>
+                </div>
+
+
+                <div class="marg-top-bot col-grey padd-lr-15">ROLE/USER MANAGEMENT</div>
+                <div class="nav-items justify-sb">
+                    <div>
+                        <img src="images/Horizontal nav/Roles.svg" alt="lock">
+                        <span>Roles</span>
+                    </div>
+                    <div><i class="ph ph-caret-right"></i></div>
+                </div>
+                <div class="nav-items justify-sb">
+                    <div>
+                        <img src="images/Horizontal nav/assign user.svg" alt="lock">
+                        <span>Assign Rights</span>
+                    </div>
+                    <div><i class="ph ph-caret-right"></i></div>
+                </div>
+            </div>
+
+            <div class="update m-t-25 m-r-20">
+                <div>Install new update 2.3.1A</div>
+                <div>Allow to launch the new update for the AD application</div>
+                <div>
+                    <button class="light-red-theme">Dismiss</button>
+                    <button class="dark-red-theme">Accept</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="padd-r-1r">
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <img class="search-img" src="images/bx-search.png" alt="search_image">
+                <div class="search-icons">
+                    <img src="images/Vertical Navbar/Language.svg" alt="iconButton">
+                    <img src="images/Vertical Navbar/Categories.svg" alt="icon1">
+                    <img src="images/Vertical Navbar/Mode.svg" alt="icon2">
+                    <img src="images/Vertical Navbar/Notifications.svg" alt="icon3">
+                    <div class="user-icon">
+                        <img src="images/target-user-icon.svg" alt="">
+                        <div>
+                            <div>Jhon Abraham</div>
+                            <div class="f-bold">Admin</div>
+                        </div>
+                    </div>
+                    <div class="trans-9"><i class="ph ph-caret-down"></i></div>
+                </div>
+            </div>
+
+            <div class="flex-center justify-sb m-t-25">
+                <div>
+                    <div class="f-bold f-20 col-gray">Employees</div>
+                    <div class="col-grey m-t-8">Find all of your company's employee accounts and their associated roles.</div>
+                </div>
+                <div class="flex">
+                    <div class="style-btn m-r-10">
+                        <button class="gray-btn"><div class="flex-center"><img src="images/Interface/Export.svg" alt=""><span>EXPORT</span></div></button>
+                    </div>
+                    <div class="style-btn">
+                        <button class="dark-red-theme br-none"><div class="flex-center"><img src="images/Interface/Add.svg" alt=""><span>ADD EMPLOYEE</span></div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alphabets m-t-25">
+                <img src="images/Vector.png" alt="vector">
+            </div>
+
+            <div class="filter flex justify-sb">
+                <div>
+                    <span>Filter <i class="ph ph-funnel-simple"></i></span>
+                    <span class="br-red p-7-9 m-0-5">Status <i class="ph ph-caret-down"></i></span>
+                    <span class="br-red p-7-9 m-0-5">Location <i class="ph ph-caret-down"></i></span>
+                    <span class="br-red p-7-9 m-0-5">Department <i class="ph ph-caret-down"></i></span>
+                </div>
+                <div>
+                    <span class="br-red p-7-9 m-0-5">Reset</span>
+                    <span class="p-7-9 m-0-5 dark-red-theme br-5">Apply</span>
+                </div>
+            </div>
+
+            <div class="shadow m-t-25">
+                <div class="flex-center justify-sb grid-head">
+                    <span>
+                        <img class="trans-4" src="images/arrow-turn left -down.png" alt="delete">
+                        <button class="delete" disabled>Delete</button>
+                    </span>
+                    <span>
+                        <img src="images/table-add.png" alt="add">
+                    </span>
+                </div>
+                <table id="userTable">
+                    <tr>
+                        <th><input type="checkbox" id="mainCheckbox"></th>
+                        <th>USER  <i class="ph ph-caret-up-down"></i> </th>
+                        <th style="min-width: 111px;">LOCATION <i class="ph ph-caret-up-down"></i> </th>
+                        <th style="min-width: 132px;">DEPARTMENT <i class="ph ph-caret-up-down"></i> </th>
+                        <th>ROLE <i class="ph ph-caret-up-down"></i> </th>
+                        <th style="min-width: 93px;">EMP NO <i class="ph ph-caret-up-down"></i> </th>
+                        <th style="min-width: 90px;">STATUS <i class="ph ph-caret-up-down"></i> </th>
+                        <th style="min-width: 100px;">JOIN DT <i class="ph ph-caret-up-down"></i> </th>
+                        <th class="f-20 dots"><i class="ph ph-dots-three"></i></th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

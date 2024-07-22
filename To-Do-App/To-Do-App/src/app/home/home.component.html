@@ -1,0 +1,7 @@
+<div class="home-container" #home>
+    <sidebar (onAddTaskClick)="openDialog()"></sidebar>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<app-add-task [task]="editingTask" *ngIf="showAddTaskModal" (close)="closeAddTaskModal()"></app-add-task>

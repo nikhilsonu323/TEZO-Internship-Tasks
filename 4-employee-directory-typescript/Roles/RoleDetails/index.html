@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="/common.js" defer></script>
+    <script src="roleDetails.js"></script>
+</head>
+<body onload="initialize()">
+    <div class="container">
+        <nav class="padd-l-1r bg-white w-300" id="vNav">
+
+            <div class="logo padd-lr-15">
+                <img id="logoImg" src="/images/TezoLogo.svg" alt="logo">
+                <img id="minimize" class="c-pointer" src="/images/handle.png" alt="handle">
+            </div>
+            <div class="padd-r-1r">
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 nav-side-headings">ALL</div>
+                <div class="nav-items">
+                    <img src="/images/Horizontal nav/Dashboard.svg" alt="lock">
+                    <span>Dashboard</span>
+                </div>
+                <a class="nav-items toEmployees" href="/Employees/">
+                    <img src="/images/Horizontal nav/Employees.svg" alt="lock">
+                    <span>Employees</span>
+                </a>
+
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 nav-side-headings">ROLE/USER MANAGEMENT</div>
+                <a class="nav-items justify-sb light-red-theme b-rad-5 after side-red" href="/Roles/">
+                    <div class="flex gap-1r">
+                        <img src="/images/Horizontal nav/Roles.svg" alt="lock">
+                        <span>Roles</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </a>
+                <div class="nav-items justify-sb">
+                    <div class="flex gap-1r">
+                        <img src="/images/Horizontal nav/assign user.svg" alt="lock">
+                        <span>Assign Rights</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </div>
+            </div>
+
+            <div class="update m-t-25 m-r-20">
+                <div>Install new update 2.3.1A</div>
+                <div>Allow to launch the new update for the AD application</div>
+                <div>
+                    <button class="light-red-theme">Dismiss</button>
+                    <button class="dark-red-theme">Accept</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="padd-r-1r section-300">
+            <div class="sticky-t">
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                    <img class="search-img" src="/images/bx-search.png" alt="search_image">
+                    <div class="search-icons">
+                        <img src="/images/Vertical Navbar/Language.svg" alt="iconButton">
+                        <img src="/images/Vertical Navbar/Categories.svg" alt="icon1">
+                        <img src="/images/Vertical Navbar/Mode.svg" alt="icon2">
+                        <img src="/images/Vertical Navbar/Notifications.svg" alt="icon3">
+                        <div class="user-icon">
+                            <img src="/images/target-user-icon.svg" alt="">
+                            <div>
+                                <div>Jhon Abraham</div>
+                                <div class="f-bold">Admin</div>
+                            </div>
+                        </div>
+                        <div class="trans-9"><i class="ph ph-caret-down"></i></div>
+                    </div>
+                </div>
+
+                <div class="flex-center justify-sb m-t-25">
+                    <div>
+                        <div class="f-bold col-gray"><a href="/Roles/">Roles</a> <i class="ph ph-caret-right"></i><a href="/Roles/RoleDetails/">Employees</a></div>
+                        <div class="col-grey m-t-8 f-14">All the roles are configured here</div>
+                    </div>
+                    <div>
+                        <button class="btn dark-red-theme br-none"><div class="flex-center"><img src="/images/Interface/Add.svg" alt=""><span>ADD EMPLOYEE</span></div></button>
+                    </div>
+                </div>
+            </div> 
+
+            <div>
+                <div class="f-bold f-18">Role Description</div>
+                <div class="m-t-8 col-grey f-14">Configure the providers that are availbale to users when they sign in. Configure the providers that are available to users when they sign in. Configure the providers that are available to users when they sign in. Configure the providers that are available to users when they sign in</div>
+            </div>   
+
+            <div class="m-t-1 grid" id="employeesDataBoxes"></div>
+            
+            <div id="noDataMsg" class="light-red-theme b-rad-5 ds-none">No Data Available</div>
+
+        </section>
+    </div>
+</body>
+</html>

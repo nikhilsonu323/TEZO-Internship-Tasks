@@ -1,0 +1,47 @@
+<div class="login-container">
+    <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+        <h1 class="heading">{{isLoginMode ? 'Login' : 'Register(changed to pudh to github)'}}</h1>
+        <ul>
+            <li *ngIf="!isLoginMode" class="profile">
+                <img [src]="imageData ?? defaultImage" alt="">
+                <label for="profile" class="btn dark-red-theme">Upload Profile *</label>
+                <input type="file" id="profile" accept="image/*" (change)="onProfileChange($event)">
+            </li>
+            <li>
+                <label for="email">Email*</label>
+                <input type="text" name="email" id="email" formControlName='email'>
+                <ng-container *ngIf="form.get('email')?.touched && !form.get('empno')?.pending && form.get('email')?.invalid">
+                    <img src="assets/images/alert.png" class="alert-img" alt="">
+                    <span class="error" *ngIf="form.get('email')?.errors?.['required']">{{errorMessages.required}}</span>
+                    <span class="error" *ngIf="form.get('email')?.errors?.['email']">{{errorMessages.email}}</span>
+                </ng-container>
+            </li>
+            <li *ngIf="!isLoginMode">
+                <label for="name">Name*</label>
+                <input type="text" name="name" id="name" formControlName='name'>
+                <ng-container *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+                    <img src="assets/images/alert.png" class="alert-img" alt="">
+                    <span class="error" *ngIf="form.get('name')?.errors?.['required']">{{errorMessages.required}}</span>
+                    <span class="error" *ngIf="form.get('name')?.errors?.['pattern']">{{errorMessages.name}}</span>
+                </ng-container>
+            </li>
+            <li>
+                <label for="password">Password*</label>
+                <input type="password" id="password" formControlName='password'>
+                <ng-container *ngIf="form.get('password')?.touched && form.get('password')?.invalid">
+                    <img src="assets/images/alert.png" class="alert-img" alt="">
+                    {{form.get('password')?.errors?.['requiredLength']}}
+                    <span class="error" *ngIf="form.get('password')?.errors?.['required']">{{errorMessages.required}}</span>
+                    <span class="error" *ngIf="form.get('password')?.errors?.['pattern']">{{errorMessages.password}}</span>
+                </ng-container>
+            </li>
+        </ul>
+        <div>
+            <button class="btn submit dark-red-theme">{{isLoginMode ? 'Login' : 'Sign Up'}}</button>
+        </div>
+        <div class="toggle-mode">
+            <div *ngIf="!isLoginMode">Already have an account? <span class="col-blue" (click)="toggleMode()">Log in</span></div>
+            <div *ngIf="isLoginMode">Don't have an account? <span class="col-blue" (click)="toggleMode()">Sign up</span></div>
+        </div>
+    </form>
+</div>

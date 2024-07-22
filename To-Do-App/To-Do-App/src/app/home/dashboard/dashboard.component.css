@@ -1,0 +1,157 @@
+.main{
+    width: 85%;
+    margin: auto;
+}
+.flex-1{
+    flex: 1;
+}
+.banner-section{
+    height: 282px;
+}
+.banner-content{
+    height: 232px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 10px 0px #0000001A;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.banner-content div{
+    margin-left: 60px;
+}
+.banner-content div>h1{
+    font-size: clamp(20px, 3vw, 55px);
+    font-weight: 700;
+    margin: 0;
+}
+.banner-content div>p{
+    margin: 0;
+    margin-top: 16px;
+}
+.banner-logo{
+    position: absolute;
+    top: 21px;
+    right: 10px;
+}
+
+
+.mt-2r{
+    margin-top: 2rem;
+}
+.tasks-contianer{
+    display: flex;
+    gap: 40px;
+}
+.tasks-list{
+    flex: 1;
+}
+ul.tasks-list li:not(:first-child){
+    margin-top: 24px;
+}
+li{
+    padding: 22px 24px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 2px 2px 6px 0px #0000001A;
+}
+
+.banner>.task-stats{
+    display: none;
+}
+.task-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .main{
+        width: 90%;
+    }  
+    .banner-content div{
+        margin-left: 30px;
+    } 
+    .banner-section{
+        height: 250px;
+    }
+    .banner-content{
+        height: 200px;
+    }
+    .banner-logo{
+        height: 100%;
+        top: 40px;
+        right: 0;
+    }
+    .tasks-contianer{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .main{
+        width: 90%;
+        margin: auto;
+    }
+    .banner-section{
+        width: 100%;
+        margin-top: 16px;
+        height: 180px;
+        overflow: hidden;
+    }
+    .banner-section{
+        height: 220px;
+    }
+    .banner-content{
+        height: 180px;
+        border-radius: 14px;
+    }
+    .banner-content div{
+        margin-left: 20px;
+    }
+    .banner-logo{
+        top: 36px;
+        right: -9px;
+        height: 100%;
+    }
+    .banner-content div>p{
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    .banner>.task-stats{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .today-tasks .task-stats{
+        display: none;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .banner-section{
+        height: 141px;
+    }
+    .banner-content{
+        height: 112px;
+        border-radius: 8px;
+    }
+    .banner-content div{
+        margin-left: 10px;
+    }
+    .banner-content div>h1{
+        font-size: 14px;
+    }
+    .banner-content div>p{
+        font-size: 8px;
+        margin-top: 4px;
+    }
+    .banner-logo{
+        top: 21.4px;
+        height: 100%;
+    }    
+}

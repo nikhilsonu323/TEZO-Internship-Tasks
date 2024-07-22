@@ -1,0 +1,1 @@
+:root{--bg-red: rgb(253,233,233);--col-gray: rgb(126, 132, 136);--dark-red: rgb(244,72,72);--col-grey: rgb(173, 179, 185)}*{box-sizing:border-box}a{text-decoration:none;color:inherit}body{margin:0;padding:0;font-family:Poppins,sans-serif}.dark-red-theme{color:#fff;background-color:var(--dark-red)}.light-red-theme{color:var(--dark-red)!important;background-color:var(--bg-red)}

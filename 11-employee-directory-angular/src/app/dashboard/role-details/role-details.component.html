@@ -1,0 +1,57 @@
+<div class="role-component">
+
+    <section class="description">
+        <div>
+            <div class="description-heading">Roles > Employees</div>
+            <div class="description-text">All the roles are configured here</div>
+        </div>
+        <a routerLink="/employees/add">
+            <button class="btn dark-red-theme br-none">
+                <div class="flex-center">
+                    <img src="assets/images/Interface/Add.svg" alt="">
+                    <span>ADD Employees</span>
+                </div>
+            </button>
+        </a>
+    </section>
+
+
+    <div class="grid">
+        <div class="employee" *ngFor="let employee of employees">
+            <div class="flex-center">
+                <div>
+                    <img class="details-user-icon" [src]="employee.imageData ?? defaultImage" alt="user_image">
+                </div>
+                <div>
+                    <div>{{employee.firstName+ ' ' + employee.lastName }}</div>
+                    <div>{{employee.role.roleName}}</div>
+                </div>
+            </div>
+            <ul class="details">
+                <li>
+                    <img src="assets/images/Vector (1).svg" alt="">
+                    <span>{{employee.empNo}}</span>
+                </li>
+                <li>
+                    <img src="assets/images/email-1_svgrepo.com.svg" alt="">
+                    <span>{{employee.email}}</span>
+                </li>
+                <li>
+                    <img src="assets/images/team_svgrepo.com.svg" alt="">
+                    <span>{{employee.role.department}}</span>
+                </li>
+                <li>
+                    <img src="assets/images/location-pin-alt-1_svgrepo.com.svg" alt="">
+                    <span>{{employee.location}}</span>
+                </li>
+                <li class="f-right" (click)="viewEmployee(employee.empNo)">
+                    <span>View</span>
+                    <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.7279 6.40743C18.9513 6.184 18.9513 5.816 18.7279 5.59257L13.5353 0.400573C13.3119 0.177145 12.9439 0.177145 12.7204 0.400573C12.497 0.624002 12.497 0.992001 12.7204 1.21543L16.9284 5.42343H1.01245C0.695303 5.42343 0.435303 5.68286 0.435303 6.00057C0.435303 6.31829 0.694731 6.57772 1.01245 6.57772H16.9284L12.7204 10.7857C12.497 11.0091 12.497 11.3771 12.7204 11.6006C12.9439 11.824 13.3119 11.824 13.5353 11.6006L18.7279 6.408V6.40743Z" fill="#4C4C4C"/>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

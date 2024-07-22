@@ -1,0 +1,33 @@
+<div class="home-container">
+
+    <section class="description">
+        <div>
+            <div class="description-heading">Employees</div>
+            <div class="description-text">Find all of your company's employee accounts and their associated roles.</div>
+        </div>
+        <div class="flex">
+            <div>
+                <button class="btn gray-btn" (click)="downloadData()">
+                    <div class="flex-center">
+                        <img src="assets/images/Interface/Export.svg" alt="">
+                        <span>EXPORT</span>
+                    </div>
+                </button>
+            </div>
+            <div>
+                <a routerLink="add">
+                    <button class="btn dark-red-theme br-none">
+                        <div class="flex-center">
+                            <img src="assets/images/Interface/Add.svg" alt="">
+                            <span>ADD EMPLOYEE</span>
+                        </div>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <app-filters></app-filters>
+    
+    <data-table></data-table>
+</div>

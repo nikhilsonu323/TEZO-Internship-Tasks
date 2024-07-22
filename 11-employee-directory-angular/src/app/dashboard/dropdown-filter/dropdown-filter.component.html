@@ -1,0 +1,47 @@
+<div class="filter">
+    <div>
+        <span class="filter-heading">Filter 
+            <img src="assets/images/svg/filter_list.svg" alt="Filter List">
+        </span>
+        <div class="dropdown-container" *ngIf="filtersHandler.Status !== false" #statusDropdown>
+            <div class="dropdown" (click)="toDisplayFilterOptions.Status = !toDisplayFilterOptions.Status">
+                <span>Status</span>
+                <img src="assets/images/svg/down_arrow.svg" class="dropdown-icon">
+            </div>
+            <div class="filter-options" *ngIf="toDisplayFilterOptions.Status">
+                <option [ngClass]="selectedFilters.status.has(status.id)?'opt-bg-blue':'opt-bg-white'" [value]="status.statusType" 
+                *ngFor="let status of filterData.status" 
+                (click)="onOptionClick(selectedFilters.status,status.id)">{{status.statusType}}</option>
+            </div>
+        </div>
+
+        <div class="dropdown-container" *ngIf="filtersHandler.Location !== false" #locationDropdown>
+            <div class="dropdown" (click)="toDisplayFilterOptions.Location = !toDisplayFilterOptions.Location">
+                <span>Location</span>
+                <img src="assets/images/svg/down_arrow.svg" type="" class="dropdown-icon">
+            </div>
+            <div class="filter-options" *ngIf="toDisplayFilterOptions.Location">
+                <option [ngClass]="selectedFilters.location.has(loc.id)?'opt-bg-blue':'opt-bg-white'" [value]="loc" 
+                *ngFor="let loc of filterData.location" 
+                (click)="onOptionClick(selectedFilters.location,loc.id)">{{loc.city}}</option>
+            </div>
+        </div>
+
+        <div class="dropdown-container" *ngIf="filtersHandler.Department !== false" #departmentDropdown>
+            <div class="dropdown" #deptDropdown (click)="toDisplayFilterOptions.Department = !toDisplayFilterOptions.Department">
+                <span>Department</span>
+                <img src="assets/images/svg/down_arrow.svg" type="" class="dropdown-icon">
+            </div>
+            <div class="filter-options" *ngIf="toDisplayFilterOptions.Department">
+                <option [ngClass]="selectedFilters.departments.has(dept.id)?'opt-bg-blue':'opt-bg-white'" [value]="dept" 
+                *ngFor="let dept of filterData.departments" 
+                (click)="onOptionClick(selectedFilters.departments,dept.id)">{{dept.name}}</option>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="redbr-btn" (click)="clearSelectedOptions()">Reset</button>
+        <button class="red-btn" (click)="apply()">Apply</button>
+    </div>
+</div>

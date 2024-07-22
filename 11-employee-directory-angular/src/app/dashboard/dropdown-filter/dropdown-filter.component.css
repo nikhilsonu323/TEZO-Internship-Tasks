@@ -1,0 +1,106 @@
+.filter{
+    padding: 10px 15px 10px 20px;
+    margin-top: 15px;
+    border-radius: 7px;
+    border: 1px solid var(--dark-red);
+    color: var(--dark-red);
+    background-color: rgb(250, 239, 239);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.filter .dropdown{
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-red);
+    color: var(--col-gray);
+    background-color: white;
+    padding: 0 9px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.filter button{
+    height: 35px;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.filter .redbr-btn{
+    color: var(--dark-red);
+    background-color: white;
+    border: 1px solid var(--dark-red);
+}
+.filter .red-btn{
+    color: white;
+    background-color: var(--dark-red);
+    border: 1px solid var(--dark-red);
+}
+
+.dropdown-container{
+    position: relative;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.dropdown-icon{
+    width: 14px;
+    height: 14px;
+}
+.filter-content, .dropdown{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.filter-heading{
+    margin-right: 1rem;
+}
+.filter-heading img{
+    transform: translateY(2px);
+}
+
+/* For options in filter dropdown */
+.filter-options{
+    position: absolute;
+    z-index: 1;
+    max-height: 250px;
+    border-radius: 6px;
+    border: 1px solid var(--col-gray);
+    left: 0;
+    right: 0;
+    /* overflow-y: auto; */
+}
+.filter-options option{
+    font-size: 14px;
+    line-height: 1;
+    padding: 2px 8px;
+    cursor:default;
+}
+.filter-options option:not(:first-child){
+    border-top: 1px solid white;
+}
+.filter-options .opt-bg-white:hover{
+    background-color: rgb(31, 97, 252);
+    color: white;
+}
+.filter-options .opt-bg-blue:hover{
+    background-color: rgb(192, 197, 224);
+    color: var(--col-gray);
+}
+.filter-options option:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.filter-options option:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.opt-bg-white{
+    background-color: white;
+    color: var(--col-gray);
+}
+.opt-bg-blue{
+    background-color: rgb(31, 97, 252);
+    color: white;
+}

@@ -1,0 +1,25 @@
+.toaster{
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 6px;
+    position: fixed;
+    right: 0;
+    animation: move 2s forwards;
+    z-index: 2;
+}
+.success{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.failure{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+@keyframes move{
+    0%   { transform: translateX(100%); }
+    65%  { transform: translateX(-60%);}
+    92% { transform: translateX(0); }
+    100% { transform: translateX(-10%); }
+} 

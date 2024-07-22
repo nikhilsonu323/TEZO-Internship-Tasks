@@ -1,0 +1,66 @@
+<div class="role-component">
+
+    <section class="description">
+        <div>
+            <div class="description-heading">Roles</div>
+            <div class="description-text">All the roles are configured here</div>
+        </div>
+        <a routerLink="add">
+            <button class="btn dark-red-theme br-none">
+                <div class="flex-center">
+                    <img src="assets/images/Interface/Add.svg" alt="">
+                    <span>ADD Role</span>
+                </div>
+            </button>
+        </a>
+    </section>
+
+    <dropdown-filter [filtersHandler]="{Status: false}" (onFilterChange)="onFiltersChange($event)"></dropdown-filter>
+
+    <div class="grid">
+
+         <div *ngFor="let role of roles">
+            <div class="flex-center">
+                <div class="f-bold f-14">{{role.roleName}}</div>
+                <div class="c-pointer" (click)="editRole(role)"><img src="assets/images/edit.svg" alt="user_image"></div>
+            </div>
+            <ul class="role-details">
+                <li>
+                    <div>
+                        <img class="icon" src="assets/images/team_svgrepo.com.svg" alt="">
+                        <span>Department</span>
+                    </div>
+                    <div>{{role.department}}</div>
+                </li>
+                <li>
+                    <div>
+                        <img class="icon" src="assets/images/location-pin-alt-1_svgrepo.com.svg" alt="">
+                        <span>Location</span>
+                    </div>
+                    <div>{{role.location}}</div>
+                </li>
+                <li>
+                    <div><span>Total Employees</span></div>
+                    <div class="images">
+                        <ng-container *ngFor="let image of displayedImages[role.id],let i = index">
+                            <img [src]="image" alt="" [ngStyle]="{'transform': 'translateX('+((displayedImages[role.id].length - i) * 55) + '%)'}">
+                        </ng-container>
+                        <span *ngIf="role.employees" class="light-red-theme">
+                            {{(role.employees.length > 0 ? '+' : '' ) +
+                            (role.employees.length - displayedImages[role.id].length)}}
+                        </span>
+                    </div>
+                </li>
+                <li class="f-right" (click)="viewRoleDetails(role.id)">
+                    <span>View All Employees</span>
+                    <!-- <img src="../../../assets/images/Vector.svg" alt=""> -->
+                    <svg width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.7279 6.40743C18.9513 6.184 18.9513 5.816 18.7279 5.59257L13.5353 0.400573C13.3119 0.177145 12.9439 0.177145 12.7204 0.400573C12.497 0.624002 12.497 0.992001 12.7204 1.21543L16.9284 5.42343H1.01245C0.695303 5.42343 0.435303 5.68286 0.435303 6.00057C0.435303 6.31829 0.694731 6.57772 1.01245 6.57772H16.9284L12.7204 10.7857C12.497 11.0091 12.497 11.3771 12.7204 11.6006C12.9439 11.824 13.3119 11.824 13.5353 11.6006L18.7279 6.408V6.40743Z" fill="#4C4C4C"/>
+                    </svg>    
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

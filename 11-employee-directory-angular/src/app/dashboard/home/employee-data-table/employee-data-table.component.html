@@ -1,0 +1,63 @@
+<div class="shadow">
+    <div class="table-head">
+        <span>
+            <img class="turn-left-delete-arrow" src="assets/images/arrow-turn left -down.png" alt="delete">
+            <button class="delete" [ngClass]="selectedEmployees.size>0?'del-act':'del-dis'" [disabled]="selectedEmployees.size==0" (click)="deleteSelectedEmployees()">Delete</button>
+        </span>
+        <span>
+            <img src="assets/images/table-add.png" alt="add">
+        </span>
+    </div>
+
+    <div class="overflow">
+        <table>
+            <thead>
+                <tr>
+                    <th> <input type="checkbox" [checked]="isSelectAllCheckboxChecked" (input)="onSelectAllCheckBoxChange($event)"> </th>
+
+                    <th (click)="sort(column.columnType)" *ngFor="let column of tableColumns">  
+                        <div>
+                            <span>{{column.name}}</span>
+                            <img src="assets/images/svg/expand_all.svg" alt="sort">
+                        </div>
+                    </th>
+  
+                    <th class="f-30 rel">
+                        <img src="assets/images/svg/three_dots.svg" alt="sort">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let emp of employeesData">
+                    <td ><input type="checkbox" (input)="onCheckBoxClick(emp.empNo)" [checked]="selectedEmployees.has(emp.empNo) "></td>
+                    <td>
+                        <div class="flex-center gap-05"> 
+                            <div><img class="emp-profile-icon" [src]="emp.imageData ?? defaultImage" alt="profile"></div>
+                            <div class="span-block">
+                                <span name="userName">{{emp.firstName + ' ' + emp.lastName}}</span>
+                                <span>{{emp.email}}</span>
+                            </div>
+                        </div>        
+                    </td>
+                    <td>{{emp.location}}</td>
+                    <td>{{emp.role.department}}</td>
+                    <td>{{emp.role.roleName}}</td>
+                    <td>{{emp.empNo}}</td>
+                    <td><span class="status" [ngClass]="emp.status=='Active'?'green':'red'">{{emp.status}}</span></td>
+                    <td>{{emp.joiningDate}}</td>
+                    <td class="three-dots" (click)="selectedEllipsis = emp.empNo">
+                        <div class="ellipsis" *ngIf="selectedEllipsis == emp.empNo">
+                            <button (click)="viewDetails()">View Details</button>
+                            <button (click)="editDetails()">Edit</button>
+                            <button (click)="deleteEmployee()">Delete</button>
+                        </div>
+                        <img src="assets/images/svg/three_dots.svg" alt="">
+                    </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

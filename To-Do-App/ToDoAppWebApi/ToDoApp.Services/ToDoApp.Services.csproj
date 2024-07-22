@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp.Concerns\ToDoApp.Concerns.csproj" />
+    <ProjectReference Include="..\ToDoApp.Contracts\ToDoApp.Contracts.csproj" />
+    <ProjectReference Include="..\ToDoApp.Repository\ToDoApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,91 @@
+.login-container{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+form{
+    width: 400px;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 5px 5px rgb(213, 211, 211);
+    border-radius: 20px;
+    /* background-color: rgb(239, 239, 239); */
+}
+
+ul{
+    padding-left: 0;
+    list-style: none;
+}
+li{
+    margin: 1rem 0;
+}
+img{
+    width: 80px;
+    border-radius: 100%;
+}
+input[type='file']{
+    display: none;
+}
+label, input{
+    display: block;
+    width: 100%;
+}
+input{
+    height: 2.5rem;
+    margin-top: 10px;
+    padding: 5px 5px;
+    border: 2px solid var(--col-grey);
+}
+input:focus{
+    outline: none;
+    border: 2px solid rgb(76,154,255);
+}
+
+
+input.ng-touched.ng-invalid:focus, select.ng-touched.ng-invalid:focus{
+    outline: none;
+    border: 2px solid rgb(224,66,27) !important;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile>label{
+    width: auto ;
+}
+
+.btn{
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.alert-img{
+    width: 14px;
+    height: auto;
+    transform: translate(0,2px);
+}
+.error{
+    color: var(--dark-red);
+    margin: 0;
+    font-size: 14px;
+}
+
+.submit.btn{
+    display: block;
+    width: 90%;
+    margin: auto;
+    font-size: large;
+    padding: 12px !important;
+}
+
+.toggle-mode{
+    margin: 2rem 0 1rem 0;
+}
+.toggle-mode span{
+    color: rgb(65, 38, 239);
+    cursor: pointer;
+}

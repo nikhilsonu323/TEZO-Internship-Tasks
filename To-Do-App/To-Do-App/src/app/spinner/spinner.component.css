@@ -1,0 +1,22 @@
+.spinner{
+    border: 8px solid var(--gray);
+    border-top: 8px solid var(--orange);
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    animation: spin 1.7s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 550px) {
+    .spinner{
+        border: 6px solid var(--gray);
+        border-top: 6px solid var(--orange);
+        width: 70px;
+        height: 70px;
+    }
+}

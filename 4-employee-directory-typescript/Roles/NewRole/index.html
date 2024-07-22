@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="/common.js" defer></script>
+    <script src="newRoleScript.js"></script>
+
+</head>
+
+<body onload="newRoleLoad()">
+    <div class="container">
+        <nav class="padd-l-1r bg-white w-300" id="vNav">
+
+            <div class="logo padd-lr-15">
+                <img id="logoImg" src="/images/TezoLogo.svg" alt="logo">
+                <img id="minimize" class="c-pointer" src="/images/handle.png" alt="handle">
+            </div>
+            <div class="padd-r-1r">
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 nav-side-headings">ALL</div>
+                <div class="nav-items">
+                    <img src="/images/Horizontal nav/Dashboard.svg" alt="lock">
+                    <span>Dashboard</span>
+                </div>
+                <a class="nav-items toEmployees" href="/Employees/">
+                    <img src="/images/Horizontal nav/Employees.svg" alt="lock">
+                    <span>Employees</span>
+                </a>
+
+                <div class="marg-top-bot col-grey padd-lr-15 f-14 nav-side-headings">ROLE/USER MANAGEMENT</div>
+                <a class="nav-items justify-sb light-red-theme b-rad-5 after side-red" href="/Roles/">
+                    <div class="flex gap-1r">
+                        <img src="/images/Horizontal nav/Roles.svg" alt="lock">
+                        <span>Roles</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </a>
+                <div class="nav-items justify-sb">
+                    <div class="flex gap-1r">
+                        <img src="/images/Horizontal nav/assign user.svg" alt="lock">
+                        <span>Assign Rights</span>
+                    </div>
+                    <div class="caret"><i class="ph ph-caret-right"></i></div>
+                </div>
+            </div>
+
+            <div class="update m-t-25 m-r-20">
+                <div>Install new update 2.3.1A</div>
+                <div>Allow to launch the new update for the AD application</div>
+                <div>
+                    <button class="light-red-theme">Dismiss</button>
+                    <button class="dark-red-theme">Accept</button>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="padd-r-1r section-300">
+            <div class="sticky-t" id="fixedDetails">
+                <div class="search">
+                    <input type="text" id="searchText" placeholder="Search">
+                    <img class="search-img" src="/images/bx-search.png" alt="search_image">
+                    <div class="search-icons">
+                        <img src="/images/Vertical Navbar/Language.svg" alt="iconButton">
+                        <img src="/images/Vertical Navbar/Categories.svg" alt="icon1">
+                        <img src="/images/Vertical Navbar/Mode.svg" alt="icon2">
+                        <img src="/images/Vertical Navbar/Notifications.svg" alt="icon3">
+                        <div class="user-icon">
+                            <img src="/images/target-user-icon.svg" alt="">
+                            <div>
+                                <div>Jhon Abraham</div>
+                                <div class="f-bold">Admin</div>
+                            </div>
+                        </div>
+                        <div class="trans-9"><i class="ph ph-caret-down"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="f-bold">Create New Role</div>
+                <form class="input-form">
+                    <div class="mw-550">
+                        <ul class="p-info">
+                            <li class="br-blue">
+                                <label for="fName">Role Name</label>
+                                <input type="text" placeholder="Role" id="fName">
+                            </li>
+                            <li class="br-blue">
+                                <label for="inputDepartment">Department</label>
+                                <select id="inputDepartment">
+                                    <option value="ux">UX Designer</option>
+                                    <option value="csm">Customer Service Manager</option>
+                                    <option value="abd">Assistant Backend Developer</option>
+                                    <option value="hr">Human Resource Manager</option>
+                                    <option value="fd">Front End Developer</option>
+                                    <option value="sd">Senior Developer</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <div class="br-blue">
+                            <label for="descriptionText">Description</label>
+                            <textarea name="desc" placeholder="Text" id="descriptionText"></textarea>
+                        </div>
+                        <div class="mw-300 m-t-1 br-blue">
+                            <label for="inputLocation">Location</label>
+                            <select id="inputLocation">
+                                <option value="hyd">Hyderabad</option>
+                                <option value="eg">Egg head Island</option>
+                                <option value="eb">East Blue</option>
+                                <option value="lt">LaughTale</option>
+                            </select>
+                        </div>
+                        <div class="mw-300 m-t-1 br-blue displayOpt">
+                            <label for="assignEmployees">Assign employees</label>
+                            <div class="down-arrow"><input type="text" id="assignEmployees" placeholder="Search for an employee"></div>
+                            <div class="options ds-none">
+                                <div><img src="/images/user1.png" alt="userIcon"> <span>Jennifer Dsousa</span> <input class="f-right" type="checkbox"></div>
+                                <div><img src="/images/user1.png" alt="userIcon"> <span>Jennifer Dsousa</span> <input class="f-right" type="checkbox"></div>
+                                <div><img src="/images/user1.png" alt="userIcon"> <span>Jennifer Dsousa</span> <input class="f-right" type="checkbox"></div>
+                                <div><img src="/images/user1.png" alt="userIcon"> <span>Jennifer Dsousa</span> <input class="f-right" type="checkbox"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <button class="btn br-none light-red-theme" type="reset" onclick="window.location.href='/Roles/'">Cancel</button>
+                        <button class="btn br-none dark-red-theme" type="submit">Add Role</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

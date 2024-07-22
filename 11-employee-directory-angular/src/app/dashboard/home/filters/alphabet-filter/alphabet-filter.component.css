@@ -1,0 +1,42 @@
+.alphabet-filter-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 25px;
+}
+.alphabets{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25px,1fr));
+    gap: 0.5rem;
+}
+
+.letter{
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+}
+.gray-letter{
+    color: var(--col-gray);
+    background-color: rgb(237, 238, 239);
+}
+.red-letter{
+    color: white;
+    background-color: var(--dark-red) !important;
+}
+
+.filter-icon{
+    cursor: pointer;
+}
+.stroke-gray{
+    stroke: var(--col-grey);
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    fill: black;
+}

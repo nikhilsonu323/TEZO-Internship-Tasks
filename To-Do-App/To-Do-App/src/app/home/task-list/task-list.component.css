@@ -1,0 +1,36 @@
+.tasks-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;  
+    flex: 1;  
+}
+ul.tasks-list li:not(:first-child){
+    margin-top: 20px;
+}
+li{
+    cursor: pointer;
+    position: relative;
+    padding: 22px 24px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 2px 2px 6px 0px #0000001A;
+}
+.title{
+    overflow-wrap: anywhere;
+}
+@media (max-width: 550px) {
+    ul.tasks-list li:not(:first-child){
+        margin-top: 10px;
+    }
+    li{
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+    .checkbox-img{
+        width: 14px;
+    }
+}

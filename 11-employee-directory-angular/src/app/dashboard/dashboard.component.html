@@ -1,0 +1,8 @@
+<div class="container" [ngClass]="isNavbarMinimized? 'minimized' : ''">
+    <side-navbar (onMinimizeNavbarClicked)="toggleNavbar($event)"></side-navbar>
+    <div>
+      <search-bar></search-bar>
+      <!--For filters and employees data  -->
+      <router-outlet></router-outlet>
+    </div>
+</div>

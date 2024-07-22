@@ -1,0 +1,146 @@
+<div class="container">
+
+    <!-- <span class="message ds-none" id="msg">Employee details Added Sucessfully</span> -->
+
+    <div class="modal m-b-25">
+        <div class="employeeForm-heading">{{formMode===Modes.Add ? 'ADD EMPLOYEE' : (formMode === Modes.Edit ? 'Edit Employee' : 'View Employee')}}</div>    
+        <form name="addEmployee" [ngClass]="formMode === Modes.View ? (imageData === null ? 'view-employee-employeeForm' : ['view-employee-employeeForm', 'edit-image'] )
+                        : (imageData === null ? '' : 'edit-image')" [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()" >
+            <div [ngClass]="imageData === null ? 'image-input' : ''">
+                <div><img [src]="imageData ?? defaultImageData" alt="" class="profile" #profile></div>
+                <input type="file" id="profileInput" accept="image/*" (change)="onProfileInputChange($event)">
+                <label for="profileInput" id="uploadProfile" [ngClass]="imageData !== null ? 'edit' : ''" class="c-pointer" *ngIf=" formMode !== Modes.View">
+                    <span class="dark-red-theme upload-profile" *ngIf="imageData === null">Upload profile Picture</span>
+                    <span  *ngIf="imageData !== null">Edit</span>
+                </label>
+            </div>
+            <div class="employee-form">
+                <div class="f-bold m-b-25">Personal Information</div>
+                <div class="empno-input">
+                    <label for="empNo">Emp No</label>
+                    <input type="text" placeholder="Employee Number" id="empNo" formControlName='empno' [readOnly]="formMode === Modes.Edit">
+                    <ng-container *ngIf="employeeForm.get('empno')?.touched && !employeeForm.get('empno')?.pending && employeeForm.get('empno')?.invalid">
+                        <img src="assets/images/alert.png" class="alert-img" alt="">
+                        <span class="error" *ngIf="employeeForm.get('empno')?.errors?.['required']">{{errorMessages.required}}</span>
+                        <span class="error" *ngIf="employeeForm.get('empno')?.errors?.['pattern']">{{errorMessages.empno}}</span>
+                        <span class="error" *ngIf="employeeForm.get('empno')?.errors?.['employeeNumberExists']">Employee Number Already Exists</span>
+                    </ng-container>
+                </div>
+                <ul class="personal-info">
+                    <li>
+                        <label for="fName">First Name</label>
+                        <input type="text" placeholder="Text" id="fName" formControlName='firstName'>
+                        <ng-container *ngIf="employeeForm.get('firstName')?.touched && employeeForm.get('firstName')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('firstName')?.errors?.['required']">{{errorMessages.required}}</span>
+                            <span class="error" *ngIf="employeeForm.get('firstName')?.errors?.['pattern']">{{errorMessages.name}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="lName">Last Name</label>
+                        <input type="text" placeholder="Text" id="lName" formControlName='lastName'>
+                        <ng-container *ngIf="employeeForm.get('lastName')?.touched && employeeForm.get('lastName')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('lastName')?.errors?.['required']">{{errorMessages.required}}</span>
+                            <span class="error" *ngIf="employeeForm.get('lastName')?.errors?.['pattern']">{{errorMessages.name}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" placeholder="Select" id="dob" formControlName='dateOfBirth'>
+                        <ng-container *ngIf="employeeForm.get('dateOfBirth')?.touched && (employeeForm.get('dateOfBirth')?.invalid || employeeForm.errors?.['underAge'])">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.errors?.['underAge']">Employee should have minimum 18 years to Join</span>
+                            <!-- <span class="error" *ngIf="employeeForm.get('dateOfBirth')?.errors?.['underAge']">Employee should have minimum 18 years</span> -->
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="email">Email Id</label>
+                        <input type="email" placeholder="Joe.i@technovert.com" id="email" formControlName='email'>
+                        <ng-container *ngIf="employeeForm.get('email')?.touched && employeeForm.get('email')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('email')?.errors?.['required']">{{errorMessages.required}}</span>
+                            <span class="error" *ngIf="employeeForm.get('email')?.errors?.['email']">{{errorMessages.email}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="phoneNum">Mobile Number</label>
+                        <input type="tel" placeholder="0000000000" id="phoneNum" formControlName='mobileNumber'>
+                        <ng-container *ngIf="employeeForm.get('mobileNumber')?.touched && employeeForm.get('mobileNumber')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('mobileNumber')?.errors?.['pattern']">{{errorMessages.mobileNumber}}</span>
+                        </ng-container>
+                    </li>
+                </ul>
+
+                <div class="f-bold m-y-25">Employment Information</div>
+                <ul class="employment-info">
+                    <li>
+                        <label for="jdate">Joining Date</label>
+                        <input type="date" placeholder="12/08/2023" id="jdate" name="jdate" formControlName='joiningDate'>
+                        <ng-container *ngIf="employeeForm.get('joiningDate')?.touched && employeeForm.get('joiningDate')?.invalid ">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('joiningDate')?.errors?.['required']">{{errorMessages.required}}</span>
+                            <span class="error" *ngIf="employeeForm.get('joiningDate')?.errors?.['joiningDateExceedsCurrentDate']">Joining Date shouldn't Exceed current Date</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="inputLocation">Location</label>
+                        <select id="inputLocation" formControlName='location'>
+                            <option value="" hidden>Select Location</option>
+                            <option [value]="location.id" *ngFor="let location of locations; let isFirst = first">{{location.city}}</option>
+                        </select>
+                        <ng-container *ngIf="employeeForm.get('location')?.touched && employeeForm.get('location')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('location')?.errors?.['required']">{{errorMessages.required}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="title">Job Title</label>
+                        <select id="title" formControlName='jobTitle'>
+                            <option value="" hidden>Select Job Title</option>
+                            <option [value]="role.id" *ngFor="let role of jobTitles">{{role.roleName}}</option>
+                        </select>
+                        <ng-container *ngIf="employeeForm.get('jobTitle')?.touched && employeeForm.get('jobTitle')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('jobTitle')?.errors?.['required']">{{errorMessages.required}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="inputDepartment">Department</label>
+                        <select id="inputDepartment" formControlName='department'>
+                            <option value ="" hidden>Select Department</option>
+                            <option [value]="department.id" *ngFor="let department of departments">{{department.name}}</option>
+                        </select>
+                        <ng-container *ngIf="employeeForm.get('department')?.touched && employeeForm.get('department')?.invalid">
+                            <img class="alert-img" src="assets/images/alert.png" alt="">
+                            <span class="error" *ngIf="employeeForm.get('department')?.errors?.['required']">{{errorMessages.required}}</span>
+                        </ng-container>
+                    </li>
+                    <li>
+                        <label for="assignManager">Assign Manager</label>
+                        <select id="assignManager" formControlName='manager'>
+                            <option value="">{{formMode === Modes.View ? 'Not Assigned to Any Manager' : 'Select Manager'}}</option>
+                            <option [value]="manager.empNo" *ngFor="let manager of managers">{{manager.firstName+" "+manager.lastName}}</option>
+                        </select>
+                        <span class="error"></span>
+                    </li>
+                    <li>
+                        <label for="assignProject">Assign Project</label>
+                        <select id="assignProject" formControlName='project'>
+                            <option value="">{{formMode === Modes.View ? 'Not Assigned in Any Project' : 'Select Project'}}</option>
+                            <option [value]="project.id" *ngFor="let project of projects">{{project.name}}</option>
+                        </select>
+                        <span class="error"></span>
+                    </li>
+                </ul>
+
+                <div class="flex-right" *ngIf="formMode != Modes.View">
+                    <button class="btn br-none light-red-theme" type="button" (click)="onCancel()">Cancel</button>
+                    <button class="btn br-none dark-red-theme" type="submit">{{formMode === Modes.Add ? 'Add' : 'Edit'}} Employee</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

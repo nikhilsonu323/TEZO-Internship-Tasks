@@ -1,0 +1,33 @@
+.tasks-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.task-title{
+    font-size: 28px;
+    font-weight: 600;
+}
+.delete-all-button{
+    border: none;
+    background-color: white;
+    margin-right: clamp(10px,4vw,50px);
+    cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+    .task-title{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .task-title{
+        font-size: 12px;
+    }
+    .delete-all-button,.date{
+        font-size: 10px;   
+    }
+
+}

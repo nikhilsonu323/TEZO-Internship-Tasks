@@ -1,0 +1,116 @@
+nav{
+    padding-left: 1rem;
+    padding-top: 25px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.padd-lr-15{
+    padding: 0 15px;
+}
+.padd-r-1r{
+    padding-right: 1rem;
+}
+.f-14{
+    font-size: 14px;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.logo-banner{
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-handler{
+    transition: transform 500ms;
+}
+.rotate-180{
+    transform: rotate(180deg);
+}
+
+.marg-top-bot{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: rgb(173, 179, 185);
+
+}
+.nav-items{
+    height: 2.5rem;
+    padding: 7px 0.9rem;
+    width: 90%;
+    font-weight: bold;
+    color: var(--col-gray);
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    align-items: center;
+}
+.nav-items img{
+    vertical-align: bottom;
+}
+.flex-gap-1r{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.caret img{
+    width: 14px;
+}
+.flex-justify-sb{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Active route */
+.active-route::after{
+    position: absolute;
+    right: -15px;
+    content: '';
+    width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 2.4rem;
+    background-color: var(--dark-red);
+}
+/* .active-route img{
+    filter: invert(36%) sepia(27%) saturate(7281%) hue-rotate(340deg) brightness(113%) contrast(92%);
+    filter: invert(18%) sepia(98%) saturate(7171%) hue-rotate(359deg) brightness(101%) contrast(114%);
+} */
+.light-red-theme{
+    color: var(--dark-red) !important;
+    background-color: var(--bg-red);
+}
+
+/* Minimize nav Bar */
+.hide-side-redbar::after{
+    display: none;
+}
+
+/* Update Box */
+.update button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.update{
+    background-color: rgb(252, 246, 246);
+    padding: 20px 15px 15px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 15px;
+    width: 90%;
+}
+.update>div:first-child{
+    color: var(--dark-red);
+}
+.update>div:nth-child(2){
+    color: rgb(189, 194, 199);
+    margin-top: 5px;
+}

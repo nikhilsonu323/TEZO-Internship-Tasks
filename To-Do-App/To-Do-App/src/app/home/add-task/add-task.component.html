@@ -1,0 +1,22 @@
+<div class="modal-container">
+    <form class="modal" [formGroup]="taskForm" (ngSubmit)="onSubmit()" appTrapFocus [focusElement]="title">
+        <ul>
+            <li class="input-item title">
+                <input type="text" placeholder="Add title" formControlName="title" #title>
+                <p class="error" *ngIf="(taskForm.get('title')?.dirty || taskForm.get('title')?.touched) && taskForm.get('title')?.invalid">
+                    {{getErrorMessage(taskForm.get('title')?.errors, 'Title')}}
+                </p>
+            </li>
+            <li class="input-item description">
+                <textarea type="text" placeholder="Add description" formControlName="description"></textarea>
+                <p class="error" *ngIf="(taskForm.get('description')?.dirty || taskForm.get('description')?.touched) && taskForm.get('description')?.invalid">
+                    {{getErrorMessage(taskForm.get('description')?.errors, 'Description')}}
+                </p>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button type="button" class="btn-cancel" (click)="onDialogClose()">Cancel</button>
+            <button class="btn-save bg-orange">{{task ? "Update" : "Save"}}</button>
+        </div>
+    </form>
+</div>

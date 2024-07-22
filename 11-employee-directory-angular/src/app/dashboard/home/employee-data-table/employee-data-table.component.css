@@ -1,0 +1,139 @@
+.table-head{
+    height: 60px;
+    padding: 0 40px 0 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shadow{
+    box-shadow: 0px 0px 0px 3px rgb(240 239 239);   
+}
+
+.delete{
+    padding: 7px 14px;
+    border-radius: 3px;
+    border: none; 
+    color: white;
+}
+.del-dis {
+    background-color: rgb(255, 161, 161);
+}
+.del-act {
+    background-color: rgb(255, 75, 75);
+    cursor: pointer;
+}
+.turn-left-delete-arrow{
+    transform: translateY(5px);
+    margin-right: 10px;
+}
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+thead {
+    /* position: sticky; */
+    top: 0px;
+    background-color: white;
+    /* z-index: 2; */
+}
+tr td, tr th {
+    border-bottom: 3px solid rgb(219, 219, 219);
+}
+tr th {
+    border-top: 3px solid rgb(219, 219, 219);
+    white-space: nowrap;
+    cursor: pointer;
+}
+th {
+    text-align: left;
+    color: var(--col-gray);
+    min-width: max-content;
+    height: 60px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+th div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+th div>img{
+    width: 14px;
+}
+
+/* Table rows */
+td{
+    font-size: 12px;
+    padding: 5px 0px 5px 10px;
+}
+tbody>tr:hover{
+    background-color: rgb(253, 244, 244);
+}
+input[type=checkbox]{
+    accent-color: var(--col-gray);
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+.gap-05{
+    gap: 0.5rem;
+}
+.emp-profile-icon{
+    width: 35px;
+    border-radius: 100%;
+    transform: translate(0,3px);
+}
+.span-block span{
+    display: block;
+}
+.status{
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 72px;
+    text-align: center;
+}
+.green{
+    background-color: rgb(231,244,232);
+    color: rgb(122,179,158);
+}
+.red{
+    background-color: rgb(248,215,218);
+    /* color: rgb(142,47,56); */
+    color: rgba(137,58,91);
+}
+
+.three-dots{
+    padding-right: 10px;
+    position: relative;
+}
+.three-dots img{
+    cursor: pointer;
+}
+.ellipsis{
+    position: absolute;
+    font-size: 14px;
+    transform: translateX(-100%);
+    top: 20px;
+    border: 2px solid var(--col-gray);
+    z-index: 1;
+}
+.ellipsis button{
+    background-color: white;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+}
+.ellipsis button:hover{
+    background-color: rgb(253, 244, 244);
+    /* background-color: rgb(223, 217, 217); */
+}
+.ellipsis button:not(:first-child){
+    border-top: 2px solid var(--col-gray);
+}

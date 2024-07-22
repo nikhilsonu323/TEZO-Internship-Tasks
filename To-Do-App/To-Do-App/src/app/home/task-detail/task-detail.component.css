@@ -1,0 +1,139 @@
+.details-box{
+    position: absolute;
+    width: clamp(400px, 28vw, 700px);
+    padding: 28px 36px;
+    right: 10px;
+    border-radius: 12px;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 2px 2px 10px 0px #0000001A;
+    overflow: hidden;
+}
+
+.on-top{
+    bottom: 80px;
+}
+.on-bottom{
+    top: 80px;
+}
+
+.task-detail{
+    gap: 4vh;
+}
+.details{
+    gap: 2vh;
+}
+.title{
+    gap: 8px;
+}
+.title>.heading{
+    font-size: 28px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+.description>.heading{
+    font-size: 20px;
+    font-weight: 700;
+}
+.description{
+    gap: 12px;
+}
+.description-text{
+    overflow-wrap: break-word;
+    max-height: 120px;
+    overflow: auto;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button{
+    background-color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+}
+.buttons button>img{
+    width: 100%;
+    object-fit: contain;
+}
+.m-left-16{
+    margin-left: 16px;
+}
+
+button img{
+    background-color: transparent
+}
+.image-bg-orange img{
+    background-color: var(--orange);
+}
+
+
+@media (max-width: 900px) {
+    .details-box{
+        padding: 20px 24px;
+        width: 300px;
+    }
+    .title>.heading{
+        font-size: 20px;
+    }
+    .title>.time{
+        font-size: 16px;
+    }
+    .description{
+        gap: 6px;
+    }
+    .description>.heading{
+        font-size: 16px;
+    }
+    .description-text{
+        font-size: 12px;
+        max-height: 100px;
+    }
+    .buttons button{
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 550px) {
+    .details-box{
+        position: absolute;
+        width: 200px;
+        padding: 16px 20px;
+    }
+    .on-top{
+        bottom: 44px;
+    }
+    .on-bottom{
+        top: 44px;
+    }
+    .title{
+        gap: 4px;
+    }
+    .title>.heading{
+        font-size: 12px;
+    }
+    .title>.time{
+        font-size: 8px;
+    }
+    .description>.heading{
+        font-size: 8px;
+    }
+    .description-text{
+        font-size: 8px;
+        max-height: 60px;
+    }
+    .buttons button{
+        width: 18px;
+        height: 18px;
+    }
+}

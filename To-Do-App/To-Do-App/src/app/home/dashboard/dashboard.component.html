@@ -1,0 +1,32 @@
+<app-header [heading]="'Dashboard'"></app-header>
+<div class="main">
+    <section class="banner">
+        <div class="banner-section">
+            <div class="banner-content">
+                <div>
+                    <h1>Hello, Beautiful Human!</h1>
+                    <p>What do you want to do today?</p>
+                </div>
+                <img src="assets/young smiling woman working at laptop.png" class="banner-logo" alt="">
+            </div>
+        </div>
+        <div class="task-stats" *ngIf="(activeTasks.length + completedTasks.length) > 0">
+            <stat-card class="flex-1" [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
+            <stat-card class="flex-1" [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
+        </div>
+    </section>
+
+    <section class="today-tasks" [ngClass]="{'mt-2r' : (activeTasks.length + completedTasks.length) > 0}">
+        <task-list-header heading="Today's Tasks" [showDelete]="activeTasks.length+completedTasks.length > 0"></task-list-header>
+        <div class="tasks-contianer" *ngIf="(activeTasks.length + completedTasks.length) > 0">
+            <div class="tasks-list">
+                <task-list [tasks]="activeTasks.concat(completedTasks)" [toShowTaskDetails]="false"></task-list>
+            </div>
+            <div class="task-stats">
+                <stat-card [percent]="completedTasksPercent" backgroundColor='brown' [statusType]="statuses.Completed"></stat-card>
+                <stat-card [percent]="activeTasksPercent" backgroundColor='orange' [statusType]="statuses.Active"></stat-card>
+            </div>
+        </div>
+        <no-task-message *ngIf="activeTasks.length + completedTasks.length === 0"></no-task-message>
+    </section>
+</div>

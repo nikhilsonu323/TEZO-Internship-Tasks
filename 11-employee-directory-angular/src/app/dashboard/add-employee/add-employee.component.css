@@ -1,0 +1,138 @@
+.form-heading{
+    margin-bottom: 20px;
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.profile{
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}
+input[type = "file"]{
+    display: none !important;
+}
+.image-input{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.upload-profile{
+    color: white !important;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+.image-input span{
+    text-align: center;
+}
+
+.m-b-25{
+    margin-bottom: 25px;
+}
+.m-y-25{
+    margin: 25px 0;
+}
+@media (width>600px) {
+    .employee-form{
+        max-width: 80%;
+    }
+}
+.employee-form{
+    flex: 1;
+}
+form ul>li{
+    list-style-type: none;
+}
+form ul{
+    padding-left: 0;
+    display: grid;
+    gap: 1rem;
+}
+.personal-info{
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.employment-info{
+    grid-template-columns: repeat(auto-fit,minmax(min(350px,100%),1fr));
+}
+.empno-input{
+    width: 280px;
+}
+
+
+input, label, select,#editProfile{
+    display: block;
+    width: 100%;
+    min-height: 2.5rem;
+}
+select {
+    background-color: rgb(244,245,247);
+}
+label,.image-input span{
+    color: var(--col-gray);
+}
+input, select{
+    padding: 5px 5px;
+    border: 2px solid var(--col-grey);
+}
+input:focus, select:focus{
+    outline: none;
+    border: 2px solid rgb(76,154,255);
+}
+
+input.ng-touched.ng-invalid:focus, select.ng-touched.ng-invalid:focus{
+    outline: none;
+    border: 2px solid rgb(224,66,27) !important;
+}
+
+
+
+.alert-img{
+    width: 14px;
+    height: auto;
+    transform: translate(0,2px);
+}
+.error{
+    color: var(--dark-red);
+    margin: 0;
+    font-size: 14px;
+}
+
+
+.f-bold{
+    font-weight: 500;
+}
+.c-pointer{
+    cursor: pointer;
+}
+.edit{
+    font-weight: 500;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.btn{
+    height: 2.5rem;
+    padding: 0 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.br-none{
+    border: none;
+}
+.flex-right{
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+}
+
+
+.view-employee-form select:disabled{
+    color: black;
+    opacity: 1;
+}
+
+.edit-image{
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}

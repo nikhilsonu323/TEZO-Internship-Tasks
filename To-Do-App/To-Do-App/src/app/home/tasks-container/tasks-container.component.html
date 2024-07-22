@@ -1,0 +1,9 @@
+<div>
+    <app-header [heading]="taskType === Statuses.Active ? 'Active' : 'Completed'"></app-header>
+    <div class="task-content">
+        <task-list-header 
+        [heading]="'Today\'s ' + (taskType === Statuses.Active ? 'Active' : 'Completed') +' Tasks'"></task-list-header>
+        <task-list [tasks]="tasks"></task-list>
+    </div>
+    <no-task-message *ngIf="tasks.length == 0" [message]="getMessage()"></no-task-message>
+</div>

@@ -1,0 +1,9 @@
+<ul class="tasks-list" #tasklist>
+    <li *ngFor="let task of tasks" [ngClass]="{'bg-orange' : task.statusId == statuses.Completed}" (click)="showTaskDetails(task.taskId, $event)">
+        <img [src]="task.statusId == statuses.Active ? 'assets/material-symbols_check-box-outline.png' : 'assets/material-symbols_check-box.png'" class="checkbox-img" alt="">
+        <span class="title">{{task.title}}</span>
+        <span class="details" *ngIf="toShowTaskDetails && taskId === task.taskId" #taskDetails>
+            <task-detail [position]="taskDetailsPosition" [task]="task"></task-detail>
+        </span>
+    </li>
+</ul> 

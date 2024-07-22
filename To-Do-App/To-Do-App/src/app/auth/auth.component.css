@@ -1,0 +1,208 @@
+.auth-container{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+.background-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 10%;
+    object-fit: cover;
+}
+.content{
+    width: clamp(480px,60%,1000px);
+    padding: 70px 80px;
+    border-radius: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+    box-shadow: 4px 4px 16px 0px #0000001A;
+}
+.auth-title{
+    align-self: center;
+}
+.auth-title>h1{
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.auth-title>p{    
+    margin: 16px 0 0 0;
+    text-align: center;
+}
+
+/* Sign up */
+.auth-container.signup .content{
+    color: white;
+    background: var(--orange);
+}
+.auth-container.signup button{
+    background-color: var(--brown);
+}
+
+/* login */
+.auth-container.login .content{
+    background: white;
+}
+.auth-container.login button{
+    background-color: var(--orange);
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* Gap between inputs */
+li:not(:first-child){
+    margin-top: 40px;
+}
+li input{
+    width: 100%;
+    padding: 22px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 2px 2px 8px 0px #0000001A;
+    font-size: 20px;
+}
+input:focus{
+    outline: none;
+}
+::placeholder {
+    color: rgb(185, 178, 178);
+}
+
+.password-toggle-icon{
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+}
+.form-item-password{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+button{
+    width: 196px;
+    height: 68px;
+    padding: 24px 60px;
+    border-radius: 12px;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form-item-button p{
+    margin: 10px 0 0 0;
+}
+.form-item-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px !important;
+}
+li span{
+    cursor: pointer;
+}
+
+@media (width > 1500px) {
+    .content{
+        width: 60%;
+        gap: 10vh;
+    }
+}
+
+@media (width < 1100px) {
+    .content{
+        padding: 32px;
+        width: 80%;
+        gap: 4vh;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 770px) {
+    .content{
+        padding: 32px;
+        margin: auto;
+        margin-top: 32px;
+        width: 90% !important;
+        border-radius: 8px;
+    }
+    .auth-title>h1{
+        font-size: 40px;
+    }
+    .auth-title>p{
+        font-size: 12px;
+    }
+    li input{
+        padding: 16px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    button{
+        width: 80px;
+        height: 35px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 550px) {
+    .auth-container{
+        place-items: flex-start;
+    }
+    .content{
+        margin: auto;
+        margin-top: 32px;
+        padding: 32px;
+        width: 90%;
+        gap: 4vh;
+        border-radius: 8px;
+    }
+    .auth-title>h1{
+        font-size: 32px;
+    }
+    .auth-title>p{
+        font-size: 10px;
+    }
+    li:not(:first-child){
+        margin-top: 12px;
+    }
+    li input{
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .password-toggle-icon{
+        width: 16px;
+    }
+    .form-item-button{
+        margin-top: 24px !important;
+    }
+    button{
+        width: 55px;
+        height: 26px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 8px;
+    }
+    .form-item-button p{
+        font-size: 8px;
+    }
+    .error-message{
+        font-size: 10px;
+    }
+}
+
+
+
+.error-message{
+    color: red;
+}
